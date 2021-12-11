@@ -1,6 +1,4 @@
-/*if(!window.indexedDB){
-    alert("No lo soporta IndesedDB")
-}*/
+
 let connection = indexedDB.open("Visas_2021", 1);
 let database;
 let isOnline=true;
@@ -129,10 +127,22 @@ function guardar(params){
             },
             body: citaObjeto})
         .then(res => res.json())    
-        //.then (data => console.log (data))   
+        .then (data => {
+            swal({
+                title: "Datos guardados",
+                text: "Los datos se han guardado",
+                icon: "success",
+                button: "OK",
+              });
+        })   
         .catch(err => { 
     
-           
+            swal({
+                title: "Error",
+                text: "Error al guardar",
+                icon: "error",
+                button: "OK",
+              });
         });
      }else{
         const transaction = database.transaction(["cita"],"readwrite")
