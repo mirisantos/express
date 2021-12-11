@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css">  -->
+    <link rel= "manifest" href="manifest.webmanifest">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+    <title>Reservaciones</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header center orange-text">Trámite de visa para E.U <i class="medium material-icons prefix">flight</i></h1>
+        <div class="section">
+    
+          <!--   Icon Section   -->
+          <div class="row">
+            <form  id= "form">
+             
+              <div class="row">
+                <div class="input-field col s12 m4">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="nombre" name="nombre" type="text" class="validate">
+                  <label for="nombre">Nombre</label>
+                </div>
+                <div class="input-field col s12 m4">
+                  <i class="material-icons prefix">person</i>
+                  <input id="apellido" type="text" class="validate">
+                  <label for="apellido">Apellidos</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <i class="material-icons prefix">perm_contact_calendar</i>
+                    <input id="fechaNacimiento" type="text" class="validate datepicker">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12 m4">
+                    <i class="material-icons prefix">flag</i>
+                    <input id="nacionalidad" type="text" class="validate">
+                    <label for="nacionalidad">Nacionalidad</label>
+                </div>
+                <div class="input-field col s12 m4">
+                  <i class="material-icons prefix">assignment_ind</i>
+                  <input id="pasaporte" type="text" class="validate">
+                  <label for="pasaporte">Pasaporte</label>
+                </div>
+                <div class="input-field col s12 m4">
+                  <i class="material-icons prefix">phone</i>
+                  <input id="telefono" type="tel" class="validate">
+                  <label for="telefono">Teléfono</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12 m4">
+                    <i class="material-icons prefix">contacts</i>
+                    <input id="direccion" type="text" class="validate">
+                    <label for="direccion">Dirección</label>
+              </div>
+                <div class="input-field col s12 m4">
+                  <i class="material-icons prefix">folder</i>
+                  <input id="correo" type="email" class="validate" required="required">
+                  <label for="correo">Correo</label>
+                  <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                </div>
+                <div class="input-field col s12 m++++4">
+                  <i class="material-icons prefix">person</i>
+                  <input id="tipoVisa" type="text" class="validate">
+                  <label for="tipoVisa">Tipo de visa</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">date_range</i>
+                  <input id="fechaCita" type="text" class="validate datepicker">
+                  <label for="fechaCita">Fechas</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">access_alarm</i>
+                  <input id="hora" type="tel" class="validate timepicker">
+                  <label for="hora">Hora</label>
+                </div>
+            </div>
+            <div class="row">
+                <button id="btnGuardar" class="btn waves-effect waves-light right red lighten-2" type="button" name="action">Enviar
+                    <i class="material-icons right">send</i>
+                  </button>
+            </div>
+           
+            </form>
+          </div>
+    
+        </div>
+        <br><br>
+      </div>
+
+</body>
+</html>
