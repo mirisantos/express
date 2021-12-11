@@ -128,6 +128,7 @@ function guardar(params){
             body: citaObjeto})
         .then(res => res.json())    
         .then (data => {
+            document.getElementById('form').reset();
             swal({
                 title: "Datos guardados",
                 text: "Los datos se han guardado",
@@ -150,8 +151,12 @@ function guardar(params){
         let result = objStore.add(cita);
  
         result.onsuccess = event => {
-            console.log("Cita guardada")
-            alert("Cita guardada");
+            swal({
+                title: "Datos guardados",
+                text: "Los datos se han guardado",
+                icon: "success",
+                button: "OK",
+              });
     
         document.getElementById('form').reset();
         }
@@ -178,14 +183,13 @@ function guardar(params){
  }
 
 connection.onsuccess= event =>{
-    console.log("Conexión abierta") 
     database= connection.result;  
 }
 connection.onerror= event =>{
-    console.log("Error al conectar")
+    //console.log("Error al conectar")
 }
 connection.onblocked= event =>{
-    console.log("Conexión bloqueada");
+    //console.log("Conexión bloqueada");
 }
 connection.onupgradeneeded= event =>{
     database= connection.result;
@@ -194,7 +198,7 @@ connection.onupgradeneeded= event =>{
        // var nick = usuarios.createIndex('by_nick', 'nick', { unique : true });
        // var password = usuarios.createIndex('by_password', 'password', { unique : false });
 
-    console.log("BD Actualizada")
+   // console.log("BD Actualizada")
 }
 
  window.addEventListener("online", () =>{
@@ -205,10 +209,10 @@ connection.onupgradeneeded= event =>{
     });
      //leer y enviar las reservaciones a la api FETCH POST
      swal({
-        title: "En linea!",
+        title: "En línea otra vez!",
         text: "Conexión estable!",
         icon: "success",
-        button: "OK!",
+        button: "OK",
       });
  })    
  window.addEventListener("offline", () =>{
@@ -217,9 +221,9 @@ connection.onupgradeneeded= event =>{
     //indexDB
     swal({
         title: "Fuera de linea!",
-        text: "Sin conexión!",
+        text: "Al parecer tienes falla con tu red!",
         icon: "error",
-        button: "OK!",
+        button: "OK",
       });
     //guardar las reservaciones offline
 })
